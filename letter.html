@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surat Cinta Untukmu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="persistent-audio.js"></script>
+</head>
+<body class="love-theme">
+    <div class="background-animation">
+        <div class="heart-particles"></div>
+    </div>
+
+    <div class="container">
+        <div class="love-letter-page">
+            <div class="love-header">
+                <h1 class="love-title">Surat Buat Pacarku AWAAA</h1>
+                <p class="love-subtitle">1001 kisah cinta kita</p>
+            </div>
+
+            <div class="love-letter-content">
+                <div class="love-letter-paper">
+                    <div class="love-letter-text">
+                        <p class="letter-greeting">Buat sayangku Najwa Shafiyyah Uzma,</p>
+
+                        <p>
+                            Hai sayang... kita ketemu lagi di tanggal ini hahay,
+                            banyak hal yang udah kita lewatin bareng, susah seneng lebih banyak senengnya sih sama kamu hehe.
+                        </p>
+
+                        <p>
+                            Aku mau banyak-banyak berterimakasih sama kamu, mungkin ga akan cukup kalo aku ketik disini. Sayang... sejauh ini bareng sama kamu aku banyak banget belajar tentang kamu. Kamu baik banget, kamu care sama aku, banyak hal baru yang kamu kasih ke aku. Kamu selalu mau kalo aku ajak main, kamu selalu excited kalo ketemu aku, kamu selalu ada buat aku.
+                        </p>
+                        
+                        <p>
+                            Makasih banget kamu udah mau nerima aku apa adanya. Aku sadar aku masih banyak banget kurangnya tapi adanya kamu udah bisa ngelengkapin puzzle yang kurang dari aku ayy. Aku ngerasa kamu hal yang paling berharga yang aku punya sekarang, kamu cukup hadir ada buat aku itu udah bikin seneng banget kok hihi.
+                        </p>
+
+                        <p>
+                            Sayang, aku juga ga lupa mau minta maaf ke kamu... Maaf aku belum bisa jadi contoh yang baik buat kamu dari berbagai banyak hal. Aku sadar aku masih banyak minusnya, aku penakut, aku pemalu, aku ga pekaan, aku ga bener, tapi kamu selalu ada, kamu selalu yakinin aku.
+                        </p>
+                        
+                        <p>
+                            Ada satu moment yang ngena ke aku, pas kita bukber kamu nyuruh aku buat ke pelayanya. Kamu bilang "coba kamu yang bilang reservasi nama awa, harus belajar berani jangan takut." Intinya gitu tapi itu buat aku satu hal yang kek kamu bisa ngesupport aku gitu loh, bukanya nyakahin aku hihih.
+                        </p>
+                        
+                        <p>
+                            Maaf juga aku belum bisa jadi pacar yang selalu ada buat kamu, sering banget kamu susah tapi aku gabisa bantu kamu. Tapi dibalik banyaknya kurangnya aku ay, aku selalu intropeksi kok, aku selalu usaha biar lebih baik lagi, ga ngestuck disitu aja. Aku gamau jadi galih yang guna buat kamu.. Maaf aku masih kemakan egoku juga, masih sering moodyan ay.
+                        </p>
+                        
+                        <p>
+                            Sayang, harapanku buat kita kedepanya ya pastinya kita lebih hangat lagi, kita bisa lebih saling sayang. Semoga kita bisa tumbuh bareng jadi pribadi yang lebih baik lagi. Semoga kita bisa lebih saling pengertian satu sama lain yaaa.. Kalo ada yang salah ditegur, dibicaraain. Inget kataku "jangan tidur sebelum masalah selesai". Udah mungkin itu aja buat sejauh ini. Semoga kita awet yaaaah ahahahaayy I LOVE YOU.
+                        </p>
+
+                        <p class="letter-signature">
+                            See uuu bulan selanjutnyaaaaaa,<br>
+                            Galih <i class="fas fa-heart"></i>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="love-letter-actions">
+                    <a href="feedback.html" class="btn btn-primary love-btn heart-pulse">
+                        Pesan Buat Galih
+                        <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                    </a>
+                    
+                    <a href="index.html" class="btn btn-secondary">
+                        Kembali Ke Halaman Awal
+                        <span class="btn-icon"><i class="fas fa-home"></i></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animasi Particle Hearts - Ditingkatkan
+        function createHearts() {
+            const container = document.querySelector('.heart-particles');
+            container.innerHTML = ''; // Clear existing hearts
+            
+            const heartCount = window.innerWidth < 768 ? 30 : 50;
+            
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.style.left = `${Math.random() * 100}%`;
+                heart.style.animationDuration = `${Math.random() * 5 + 5}s`;
+                heart.style.animationDelay = `${Math.random() * 5}s`;
+                heart.style.opacity = Math.random() * 0.5 + 0.1;
+                heart.style.transform = `scale(${Math.random() * 0.5 + 0.5})`;
+                container.appendChild(heart);
+            }
+        }
+        
+        // Initial creation
+        createHearts();
+        
+        // Recreate on resize
+        window.addEventListener('resize', createHearts);
+        
+        // Reveal animation for letter text
+        const paragraphs = document.querySelectorAll('.love-letter-text p');
+        paragraphs.forEach((p, index) => {
+            p.style.opacity = '0';
+            p.style.transform = 'translateY(20px)';
+            p.style.transition = 'all 0.5s ease';
+            
+            setTimeout(() => {
+                p.style.opacity = '1';
+                p.style.transform = 'translateY(0)';
+            }, 300 + (index * 200));
+        });
+    </script>
+</body>
+</html>

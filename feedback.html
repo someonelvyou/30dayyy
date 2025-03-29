@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Surat Cinta</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="persistent-audio.js"></script>
+</head>
+<body class="love-theme">
+    <div class="background-animation">
+        <div class="heart-particles"></div>
+    </div>
+
+    <div class="container">
+        <div class="love-feedback-page">
+            <div class="love-header">
+                <h1 class="love-title">Ceritakan Perasaanmu</h1>
+                <p class="love-subtitle">ayy disini kamu ngisi juga ya apa yang kamu rasain selama kita sampe sini hehe ngisinya yang lengkap</p>
+            </div>
+
+            <div class="love-feedback-content">
+                <form 
+                    action="https://formspree.io/f/mdkelzbn" 
+                    method="POST" 
+                    class="love-form"
+                >
+                    <div class="form-group">
+                        <label for="name">Nama</label>
+                        <input 
+                            type="text" 
+                            name="name" 
+                            placeholder="Namamu" 
+                            required
+                            class="love-input"
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input 
+                            type="email" 
+                            name="_replyto" 
+                            placeholder="Emailmu" 
+                            required
+                            class="love-input"
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Cerita Cintamu</label>
+                        <textarea 
+                            name="message" 
+                            placeholder="Ceritakan kisah cintamu..." 
+                            required
+                            class="love-textarea"
+                        ></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="love-type">Tipe Cinta</label>
+                        <select name="love-type" class="love-select">
+                            <option value="">Pilih Tipe Cinta</option>
+                            <option value="eternal-love">Cinta Sejati</option>
+                            <option value="long-distance">Cinta Jarak Jauh</option>
+                            <option value="other">Lainnya</option>
+                        </select>
+                    </div>
+                    
+                    <div class="love-form-actions">
+                        <button type="submit" class="btn btn-primary love-btn heart-pulse">
+                            Kirim Cerita
+                            <span class="btn-icon">❤️</span>
+                        </button>
+                        
+                        <a href="index.html" class="btn btn-secondary">
+                            Kembali ke Halaman Utama
+                            <span class="btn-icon">🏠</span>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animasi Particle Hearts (sama seperti di index.html)
+        function createHearts() {
+            const container = document.querySelector('.heart-particles');
+            for (let i = 0; i < 50; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.style.left = `${Math.random() * 100}%`;
+                heart.style.animationDuration = `${Math.random() * 5 + 3}s`;
+                heart.style.opacity = Math.random();
+                container.appendChild(heart);
+            }
+        }
+        createHearts();
+    </script>
+</body>
+</html>

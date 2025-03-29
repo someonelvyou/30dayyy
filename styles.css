@@ -1,0 +1,598 @@
+:root {
+    /* Modern Romantic Color Palette */
+    --color-primary: #E94057;
+    --color-secondary: #F27121;
+    --color-tertiary: #8A2387;
+    --color-background: #FFF5F7;
+    --color-text: #2D3436;
+    --color-white: #FFFFFF;
+    --color-light: #F7F7F7;
+    --color-dark: #333333;
+    
+    /* Modern Typography & Effects */
+    --font-main: 'Poppins', 'Segoe UI', sans-serif;
+    --font-heading: 'Montserrat', 'Segoe UI', sans-serif;
+    --shadow-romantic: 0 10px 20px rgba(233, 64, 87, 0.15);
+    --shadow-hover: 0 15px 30px rgba(233, 64, 87, 0.25);
+    --transition-main: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.love-theme {
+    font-family: var(--font-main);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background: linear-gradient(135deg, var(--color-background), #FFDDE1);
+}
+
+.heart-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23E94057"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>') no-repeat;
+    background-size: contain;
+    animation: fall linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes fall {
+    0% { 
+        transform: translateY(-100%) rotate(0deg) scale(0.8);
+    }
+    50% {
+        transform: translateY(50vh) rotate(180deg) scale(1.2);
+    }
+    100% { 
+        transform: translateY(100vh) rotate(360deg) scale(0.8);
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.love-landing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 90vh;
+    justify-content: center;
+}
+
+.love-header {
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.love-title {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    background: linear-gradient(45deg, var(--color-primary), var(--color-secondary), var(--color-tertiary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.love-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+    border-radius: 2px;
+}
+
+.love-subtitle {
+    font-size: 1.2rem;
+    color: var(--color-secondary);
+    opacity: 0.9;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+.love-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    background-color: var(--color-white);
+    padding: 3rem;
+    border-radius: 24px;
+    box-shadow: var(--shadow-romantic);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.love-image-container {
+    flex: 1;
+    position: relative;
+}
+
+
+
+
+.love-image-frame::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(233, 64, 87, 0.2), rgba(242, 113, 33, 0.2));
+    opacity: 0;
+    transition: var(--transition-main);
+    z-index: 1;
+    pointer-events: none;
+    border-radius: 5px;
+}
+
+.love-image-frame:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+.love-image-frame:hover::before {
+    opacity: 1;
+}
+
+.love-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: var(--transition-main);
+    transform: scale(1);
+    display: block;
+}
+
+.love-image-frame:hover .love-image {
+    transform: scale(1.05);
+}
+
+.love-invitation {
+    flex: 1;
+    text-align: center;
+    padding: 1rem;
+}
+
+.love-quote {
+    position: relative;
+    font-style: italic;
+    color: var(--color-text);
+    font-size: 1.5rem;
+    margin: 2rem 0;
+    line-height: 1.8;
+    font-weight: 500;
+}
+
+.love-quote::before,
+.love-quote::after {
+    content: '"';
+    font-size: 4rem;
+    color: var(--color-primary);
+    opacity: 0.2;
+    position: absolute;
+    font-family: serif;
+}
+
+.love-quote::before {
+    top: -20px;
+    left: -15px;
+}
+
+.love-quote::after {
+    bottom: -40px;
+    right: -15px;
+}
+
+.love-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    overflow: hidden;
+    transition: var(--transition-main);
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+.btn-primary {
+    background-image: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+    color: var(--color-white);
+    box-shadow: 0 5px 15px rgba(233, 64, 87, 0.3);
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.2), 
+        transparent
+    );
+    transition: var(--transition-main);
+    z-index: -1;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-primary:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-primary:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    box-shadow: 0 5px 15px rgba(233, 64, 87, 0.15);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    opacity: 0.9;
+    transition: var(--transition-main);
+}
+
+.btn:hover .btn-icon {
+    animation: float 1s ease infinite alternate;
+    opacity: 1;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        transform: translateY(-5px) scale(1.2);
+    }
+}
+
+.heart-pulse {
+    position: relative;
+}
+
+.heart-pulse::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    background: var(--color-primary);
+    z-index: -1;
+    animation: pulse 2s infinite;
+    opacity: 0;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+.love-music-player {
+    margin-top: 3rem;
+    position: relative;
+}
+
+.music-toggle {
+    background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+    color: var(--color-white);
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transition-main);
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 10px rgba(233, 64, 87, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.music-toggle:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(233, 64, 87, 0.3);
+}
+
+.music-toggle:active {
+    transform: translateY(0);
+}
+
+/* Letter Page Styles */
+.love-letter-page,
+.love-feedback-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 0;
+    min-height: 90vh;
+}
+
+.love-letter-content,
+.love-feedback-content {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.love-letter-paper {
+    background-color: var(--color-white);
+    padding: 3rem;
+    border-radius: 24px;
+    box-shadow: var(--shadow-romantic);
+    margin-bottom: 2.5rem;
+    text-align: left;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: var(--color-text);
+    position: relative;
+    overflow: hidden;
+}
+
+.love-letter-paper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(to right, var(--color-primary), var(--color-secondary), var(--color-tertiary));
+}
+
+.love-letter-paper p {
+    margin-bottom: 1.5rem;
+}
+
+.letter-greeting {
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+.letter-signature {
+    color: var(--color-primary);
+    font-style: italic;
+    text-align: right;
+    margin-top: 2rem;
+    font-weight: 600;
+}
+
+.love-letter-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Form Styles */
+.love-form {
+    background-color: var(--color-white);
+    padding: 3rem;
+    border-radius: 24px;
+    box-shadow: var(--shadow-romantic);
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.love-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(to right, var(--color-primary), var(--color-secondary), var(--color-tertiary));
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--color-text);
+    font-size: 0.95rem;
+}
+
+.love-input, 
+.love-textarea, 
+.love-select {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid rgba(233, 64, 87, 0.2);
+    border-radius: 12px;
+    transition: var(--transition-main);
+    font-family: var(--font-main);
+    font-size: 1rem;
+    color: var(--color-text);
+    background-color: var(--color-light);
+}
+
+.love-textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.love-input:focus, 
+.love-textarea:focus, 
+.love-select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(233, 64, 87, 0.1);
+    background-color: var(--color-white);
+}
+
+.love-form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.love-btn {
+    width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .love-content {
+        flex-direction: column;
+        padding: 2rem;
+    }
+    
+    .love-title {
+        font-size: 3rem;
+    }
+    
+    .love-letter-paper {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+    }
+    
+    .love-title {
+        font-size: 2.5rem;
+    }
+    
+    .love-subtitle {
+        font-size: 1rem;
+    }
+    
+    .love-quote {
+        font-size: 1.2rem;
+    }
+    
+    .love-letter-paper {
+        padding: 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .love-form {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .love-title {
+        font-size: 2rem;
+    }
+    
+    .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .love-letter-actions {
+        flex-direction: column;
+    }
+}
+
+/* Animation for page transitions */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.love-landing,
+.love-letter-page,
+.love-feedback-page {
+    animation: fadeIn 1s ease forwards;
+}
+
+* {
+    filter: none !important; /* Hapus efek blur */
+}

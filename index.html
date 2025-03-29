@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kisah Cinta Abadi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="persistent-audio.js"></script>
+</head>
+<body class="love-theme">
+    <div class="background-animation">
+        <div class="heart-particles"></div>
+    </div>
+    
+    <div class="container">
+        <div class="love-landing">
+            <div class="love-header">
+                <h1 class="love-title">Love Letter</h1>
+                <p class="love-subtitle">Galih, Najwa dan CNB</p>
+            </div>
+            
+            <div class="love-content">
+                <div class="love-image-container">
+                    <div class="love-image-frame">
+                        <img src="dp.gif" alt="Romantic Moment" class="love-image">
+                    </div>
+                </div>
+                
+                
+                
+                <div class="love-invitation">
+                    <p class="love-quote">
+                        "Bumi luas sekali, Tapi untungnya kita ketemu"
+                    </p>
+                    
+                    <div class="love-actions">
+                        <a href="letter.html" class="btn btn-primary love-btn heart-pulse">
+                            Lihat Pesan
+                            <span class="btn-icon"><i class="fas fa-heart"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Musik Toggle
+        const audio = document.getElementById('loveMusic');
+        const musicToggle = document.getElementById('musicToggle');
+        
+        musicToggle.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                musicToggle.innerHTML = '<i class="fas fa-pause"></i> Jeda Musik';
+            } else {
+                audio.pause();
+                musicToggle.innerHTML = '<i class="fas fa-music"></i> Putar Musik';
+            }
+        });
+        
+        // Animasi Particle Hearts - Ditingkatkan
+        function createHearts() {
+            const container = document.querySelector('.heart-particles');
+            container.innerHTML = ''; // Clear existing hearts
+            
+            const heartCount = window.innerWidth < 768 ? 30 : 50;
+            
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.style.left = `${Math.random() * 100}%`;
+                heart.style.animationDuration = `${Math.random() * 5 + 5}s`;
+                heart.style.animationDelay = `${Math.random() * 5}s`;
+                heart.style.opacity = Math.random() * 0.5 + 0.1;
+                heart.style.transform = `scale(${Math.random() * 0.5 + 0.5})`;
+                container.appendChild(heart);
+            }
+        }
+        
+        // Initial creation
+        createHearts();
+        
+        // Recreate on resize
+        window.addEventListener('resize', createHearts);
+    </script>
+</body>
+</html>
